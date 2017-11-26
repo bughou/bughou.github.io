@@ -1,0 +1,21 @@
+<html>
+<meta charset="utf8">
+<title>鸡蛋计算</title>
+<body>
+鸡蛋个数为 <span id="count"></span>
+<script>
+function calc() {
+  for (var i = 9; i < 10000; i += 9) {
+    if (
+        i % 8 == 1 && i % 7 == 5 && i % 6 == 3 &&
+        i % 5 == 4 && i % 4 == 1 && i % 2 == 1
+       ) {
+      console.log(i);
+      return i;
+    }
+  }
+}
+document.getElementById('count').textContent = calc();
+</script>
+</body>
+</html>
