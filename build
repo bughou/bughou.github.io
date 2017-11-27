@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+shopt -s extglob
+rm -rf public/!(z)
+
+hugo
+
+git -C public add --all
+git -C public commit -am save
+git -C public push
+

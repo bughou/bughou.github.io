@@ -1,46 +1,41 @@
-baseurl = "https://bughou.github.io/"
-theme = "cocoa-eh"
-builddrafts = true
-canonifyurls = true
-languageCode = "en-US"
-author = "bughou"
+baseurl = "https://bughou.github.io"
 title = "bughou的笔记"
-disqusshortname = ""
-pluralizelisttitles = false
+theme = "kiss"
+# Number of posts per page
+Paginate = 5
+enableRobotsTXT = true
+languageCode = "en"
+copyright = "&copy; <a href=\"https://github.com/bughou\">bughou</a> 2017"
+disqusShortname = ""
+googleAnalytics = ""
 
-[permalinks]
-blog = "blog/:slug/"
 
-[params]
-dateform = "Jan 2, 2006"
-dateformfull = "Mon Jan 2 2006 15:04:05 MST"
-description = "Example blog"
-copyright = "Copyright © 2017 bughou"
-# copyrightUrl = "https://creativecommons.org/licenses/by-sa/4.0/"
-logofile = "img/logo.png"
-faviconfile = "img/logo.png"
-highlightjs = true
-progressively = true
-share = true
-latestpostcount = 5
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = false # Adds OpenGraph and Twitter cards
+homeTitle = "bughou的笔记" # Title for home page
+poweredby = true # Adds powered by Hugo and Kiss below Copyright section
+
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
+
+[params.opengraph.twitter]
+page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+
+[params.social]
+
 github = "bughou"
 email = "applejava@qq.com"
-social_banner = "img/banner.png"
-usesmallsummarycard = true
-posts_navigation = true
-# issoHost = "comments.domain.tld:1234"
-# githubRepo = "githubUsername/repositoryName"
-small_banner_logo = false
+instagram = ""
+codepen = ""
 
-[params.colors]
-identifier = "#527fc1f"
-identifier_dark = "#1a3152"
-trivial = "#6a7a8b"
-foreground = "#181d2a"
-background = "#f9f9f9"
-background_dark = "#282a36"
-code = "#87a5d2"
-type = "#97d28b"
-special = "#ffcb8d"
-value = "#96c2d7"
-statement = "#ff8e91"
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
