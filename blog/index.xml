@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on bughou的笔记</title>
+    <title>Blogs on bughou的笔记</title>
     <link>https://bughou.github.io/blog/</link>
-    <description>Recent content in Blog on bughou的笔记</description>
+    <description>Recent content in Blogs on bughou的笔记</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>Copyright © 2017 bughou</copyright>
+    <language>en</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/bughou&#34;&gt;bughou&lt;/a&gt; 2017</copyright>
     <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bughou.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
     
     <item>
       <title>面试准备</title>
-      <link>https://bughou.github.io/blog/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</link>
+      <link>https://bughou.github.io/blog/interview-prepare/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bughou.github.io/blog/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</guid>
+      <guid>https://bughou.github.io/blog/interview-prepare/</guid>
       <description> 操作系统 epoll, select
 网络  sync, ack time_wait, time_close 套接字编程  golang  channel select 锁的实现  nodejs  线程数量 异步实现  数据库 mysql 索引B+树 悲观锁、乐观锁 排它锁、共享锁
 redis 持久化 aof rdb
