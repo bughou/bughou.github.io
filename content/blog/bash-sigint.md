@@ -4,7 +4,6 @@ author: bughou
 date: 2017-12-06
 ---
 
-https://www.cons.org/cracauer/sigint.html
-
-https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc
+1. https://www.cons.org/cracauer/sigint.html
+2. https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc
 
