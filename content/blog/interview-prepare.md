@@ -1,5 +1,6 @@
 ---
 title: 面试准备
+draft: true
 author: bughou
 date: 2017-11-26
 ---
