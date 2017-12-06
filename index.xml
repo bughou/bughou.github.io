@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/bughou&#34;&gt;bughou&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bughou.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash的ctrl&#43;c挂断信号（SIGINT）的处理备忘</title>
+      <link>https://bughou.github.io/blog/bash-sigint/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bughou.github.io/blog/bash-sigint/</guid>
+      <description>https://www.cons.org/cracauer/sigint.html
+https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc</description>
+    </item>
     
     <item>
       <title>面试准备</title>
