@@ -22,19 +22,5 @@
 https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc</description>
     </item>
     
-    <item>
-      <title>面试准备</title>
-      <link>https://bughou.github.io/blog/interview-prepare/</link>
-      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://bughou.github.io/blog/interview-prepare/</guid>
-      <description> 操作系统 epoll, select
-网络  sync, ack time_wait, time_close 套接字编程  golang  channel select 锁的实现  nodejs  线程数量 异步实现  数据库 mysql 索引B+树 悲观锁、乐观锁 排它锁、共享锁
-redis 持久化 aof rdb
-mongo、es 分布式  CAP：集群 分布式事务 (RocketMQ、二阶段提交、三阶段提交、PingCap)  线上排错  日志 回滚  Git rebase，revert，reflog
-CI、CD travisCI
-运维 </description>
-    </item>
-    
   </channel>
 </rss>
