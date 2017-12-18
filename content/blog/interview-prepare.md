@@ -5,15 +5,6 @@ author: bughou
 date: 2017-11-26
 ---
 
-
-### 操作系统
-epoll, select
-
-### 网络
-1. sync, ack
-2. `time_wait`, `time_close`
-3. 套接字编程
-
 ### golang
 1. channel
 2. select
@@ -22,6 +13,23 @@ epoll, select
 ### nodejs
 1. 线程数量
 2. 异步实现
+
+### Git
+rebase，revert，reflog
+
+### CI、CD
+travisCI
+
+
+
+
+### 操作系统
+epoll, select
+
+### 网络
+1. sync, ack
+2. `time_wait`, `time_close`
+3. 套接字编程
 
 ### 数据库
 #### mysql
@@ -41,12 +49,6 @@ epoll, select
 ### 线上排错
 1. 日志
 2. 回滚
-
-### Git
-rebase，revert，reflog
-
-### CI、CD
-travisCI
 
 ### 运维
 
