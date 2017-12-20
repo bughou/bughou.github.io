@@ -11,7 +11,7 @@ date: 2017-12-20T09:29:11+08:00
 
 # 2. atoi实现
   我说比较了解C，C相对C++简单很多。面试官说那你用C实现一下字符串转整数。正下笔的时候，发现C的函数定义是怎么样的都想不起来了，窘得不行。赶紧说好多年没写过C、语法都忘了，说用golang实现吧，面试官同意了。开始用golang实现：
-```
+```go
 func atoi(s string) (result int) {
   d := 1
   for i := 0; i < len(s); i++ {
@@ -22,7 +22,7 @@ func atoi(s string) (result int) {
 }
 ```
 在写完也没检查立即就给面试官了，纸上字迹比较潦草，就给面试官解说我的思路。正准备说思路，发现不对啊，立即给面试官说，这里不对，应该是从右向左遍历，于是改成下面这样：
-```
+```go
 func atoi(s string) (result int) {
   d := 1
   for i := len(s) - 1; i >= 0; i++ {
@@ -33,6 +33,55 @@ func atoi(s string) (result int) {
 }
 ```
 着急忙荒的i++也忘了改成i--了。开始解释我的思路，面试官也没说啥，就说用Golang确实比用C简单很多，然后我说就这个功能来说用golang和用C，应该是一样的，没啥区别，他说C语言里你怎么遍历字符串，我一下想起来，这里取字符串长度用了len，而C没有这个内置方法，确实golang省事不少。后来回去的路上，突然想起来，不对啊， d \*= 10 应该放在循环体的末尾啊，也不知道面试官看出来没有。现在想来，这实现还是有很大问题啊，完全没有错误处理啊。面试的时候想的都是赶紧做完，太仓促了，很多都没考虑到，平时写代码肯定不会忘记错误处理。或许面试官也看出这些问题了，只是没指出来而已，默默在心里做了减分吧。
+
+补充，还有个问题：`s[i] * d` 也忘了减掉 `'0'`了，应该是`(s[i]-'0') * d`啊。下午用C重现实现了一遍：
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int Atoi(const char s[]) {
+  int len = 0, negative = 0;
+  if (s != NULL) {
+    switch (s[0]) {
+      case '+': s++; break;
+      case '-': negative = 1; s++; break;
+    }
+    while (1) {
+      int d = s[len] - '0';
+      if (d >= 0 && d <= 9) len++;
+      else break;
+    }
+  }
+
+  int result = 0, base = 1;
+  for (int i = len - 1; i >= 0; i--) {
+    result += (s[i] - '0') * base;
+    base *= 10;
+  }
+
+  if (negative) {
+    result = -result;
+  }
+
+  return result;
+}
+
+int main() {
+  char* s[] = { "", "123",  "+123", "-123", "123a4", "+123a4", "-123a4", NULL };
+  int failed = 0;
+  for (int i = 0; s[i] != NULL; i++) {
+    int expect = atoi(s[i]);
+    int got    = Atoi(s[i]);
+    if (got != expect) {
+      printf("input: %s, expect: %d, got: %d\n", s[i], expect, got);
+      failed++;
+    }
+  }
+  if (failed == 0) {
+    printf("all tests passed.\n");
+  }
+}
+```
 
 # 3. golang channel的实现
   面试官问channel是怎样实现的，之前在网上搜了过，大致看了一下，链表+锁，就没深入研究了。我说链表+锁，然后开始扯"Don't communicate by sharing memory; share memory by communicating"这句话的误导性，不要一味的用channel，因为channel也是加锁实现的，channel和锁应该是哪个用起来简单直观，就用哪个。还把share memory说成了share information。
@@ -58,7 +107,3 @@ func atoi(s string) (result int) {
 # 总结
   上一次面试，还是四年前了。以前的面试也都是问一些各种用法，从来没有被问过底层原理和实现。自己对底层实现没足够了解，浮于表面，所以面试肯定是非常被动的。长期目标：花时间吃透底层实现，让自己更有底气些。
   
-
-
-
-

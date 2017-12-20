@@ -8,6 +8,7 @@ languageCode = "en"
 copyright = "&copy; <a href=\"https://github.com/bughou\">bughou</a> 2017"
 disqusShortname = ""
 googleAnalytics = ""
+pygmentsCodeFences = true
 
 
 [params.assets]
