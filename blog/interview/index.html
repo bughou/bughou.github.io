@@ -60,31 +60,73 @@
 <h1 id="2-atoi实现">2. atoi实现</h1>
 
 <p>我说比较了解C，C相对C++简单很多。面试官说那你用C实现一下字符串转整数。正下笔的时候，发现C的函数定义是怎么样的都想不起来了，窘得不行。赶紧说好多年没写过C、语法都忘了，说用golang实现吧，面试官同意了。开始用golang实现：</p>
-
-<pre><code>func atoi(s string) (result int) {
-  d := 1
-  for i := 0; i &lt; len(s); i++ {
-    d *= 10
-    result += s[i] * d
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">atoi</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">result</span> <span style="color:#66d9ef">int</span>) {
+  <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+    <span style="color:#a6e22e">d</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>
+    <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">d</span>
   }
-  return
-}
-</code></pre>
-
+  <span style="color:#66d9ef">return</span>
+}</code></pre></div>
 <p>在写完也没检查立即就给面试官了，纸上字迹比较潦草，就给面试官解说我的思路。正准备说思路，发现不对啊，立即给面试官说，这里不对，应该是从右向左遍历，于是改成下面这样：</p>
-
-<pre><code>func atoi(s string) (result int) {
-  d := 1
-  for i := len(s) - 1; i &gt;= 0; i++ {
-    d *= 10
-    result += s[i] * d
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">atoi</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">result</span> <span style="color:#66d9ef">int</span>) {
+  <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+    <span style="color:#a6e22e">d</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>
+    <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">d</span>
   }
-  return
-}
-</code></pre>
-
+  <span style="color:#66d9ef">return</span>
+}</code></pre></div>
 <p>着急忙荒的i++也忘了改成i&ndash;了。开始解释我的思路，面试官也没说啥，就说用Golang确实比用C简单很多，然后我说就这个功能来说用golang和用C，应该是一样的，没啥区别，他说C语言里你怎么遍历字符串，我一下想起来，这里取字符串长度用了len，而C没有这个内置方法，确实golang省事不少。后来回去的路上，突然想起来，不对啊， d *= 10 应该放在循环体的末尾啊，也不知道面试官看出来没有。现在想来，这实现还是有很大问题啊，完全没有错误处理啊。面试的时候想的都是赶紧做完，太仓促了，很多都没考虑到，平时写代码肯定不会忘记错误处理。或许面试官也看出这些问题了，只是没指出来而已，默默在心里做了减分吧。</p>
 
+<p>补充，还有个问题：<code>s[i] * d</code> 也忘了减掉 <code>'0'</code>了，应该是<code>(s[i]-'0') * d</code>啊。下午用C重现实现了一遍：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Atoi</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> s[]);
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Atoi</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> s[]) {
+  <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, negative <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (s <span style="color:#f92672">!=</span> NULL) {
+    <span style="color:#66d9ef">switch</span> (s[<span style="color:#ae81ff">0</span>]) {
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;+&#39;</span><span style="color:#f92672">:</span> s<span style="color:#f92672">++</span>; <span style="color:#66d9ef">break</span>;
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">:</span> negative <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; s<span style="color:#f92672">++</span>; <span style="color:#66d9ef">break</span>;
+    }
+    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+      <span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> s[len] <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;0&#39;</span>;
+      <span style="color:#66d9ef">if</span> (d <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> d <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>) len<span style="color:#f92672">++</span>;
+      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">break</span>;
+    }
+  }
+
+  <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, base <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {
+    result <span style="color:#f92672">+=</span> (s[i] <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">*</span> base;
+    base <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (negative) {
+    result <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>result;
+  }
+
+  <span style="color:#66d9ef">return</span> result;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> s[] <span style="color:#f92672">=</span> { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;123&#34;</span>,  <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;+123&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;-123&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;123a4&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;+123a4&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;-123a4&#34;</span>, NULL };
+  <span style="color:#66d9ef">int</span> failed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; s[i] <span style="color:#f92672">!=</span> NULL; i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">int</span> expect <span style="color:#f92672">=</span> atoi(s[i]);
+    <span style="color:#66d9ef">int</span> got    <span style="color:#f92672">=</span> Atoi(s[i]);
+    <span style="color:#66d9ef">if</span> (got <span style="color:#f92672">!=</span> expect) {
+      printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;input: %s, expect: %d, got: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, s[i], expect, got);
+      failed<span style="color:#f92672">++</span>;
+    }
+  }
+  <span style="color:#66d9ef">if</span> (failed <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;all tests passed.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+  }
+}</code></pre></div>
 <h1 id="3-golang-channel的实现">3. golang channel的实现</h1>
 
 <p>面试官问channel是怎样实现的，之前在网上搜了过，大致看了一下，链表+锁，就没深入研究了。我说链表+锁，然后开始扯&rdquo;Don&rsquo;t communicate by sharing memory; share memory by communicating&rdquo;这句话的误导性，不要一味的用channel，因为channel也是加锁实现的，channel和锁应该是哪个用起来简单直观，就用哪个。还把share memory说成了share information。</p>
