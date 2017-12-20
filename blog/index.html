@@ -44,6 +44,26 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">December 20, 2017</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/interview/">腾讯面试</a></h1>
+      <div class="content">
+        昨晚面试，暴露了我的一个问题，浮于表面，对基础概念的实现完全没有深入研究。 记录一下面试过程：
+1. 跳槽多 面试官坐下来，看我的简历，就说你呆过的公司挺多啊。让我解释一下为啥换了这多公司。于是我开始一家一家的解释离职原因。面试官也没说啥。现在想起来，我应该总结一下，到目前为止呆过5家公司，第一次辞职是上海回成都，第二次是因为自己创业，第三次是因为被朋友挖走了，第四次是因为公司高层斗争不发工资了。
+2. atoi实现 我说比较了解C，C相对C++简单很多。面试官说那你用C实现一下字符串转整数。正下笔的时候，发现C的函数定义是怎么样的都想不起来了，窘得不行。赶紧说好多年没写过C、语法都忘了，说用golang实现吧，面试官同意了。开始用golang实现：
+func atoi(s string) (result int) { d := 1 for i := 0; i &lt; len(s); i++ { d *= 10 result += s[i] * d } return }  在写完也没检查立即就给面试官了，纸上字迹比较潦草，就给面试官解说我的思路。正准备说思路，发现不对啊，立即给面试官说，这里不对，应该是从右向左遍历，于是改成下面这样：
+func atoi(s string) (result int) { d := 1 for i := len(s) - 1; i &gt;= 0; i++ { d *= 10 result += s[i] * d } return }  着急忙荒的i++也忘了改成i&ndash;了。开始解释我的思路，面试官也没说啥，就说用Golang确实比用C简单很多，然后我说就这个功能来说用golang和用C，应该是一样的，没啥区别，他说C语言里你怎么遍历字符串，我一下想起来，这里取字符串长度用了len，而C没有这个内置方法，确实golang省事不少。后来回去的路上，突然想起来，不对啊， d *= 10 应该放在循环体的末尾啊，也不知道面试官看出来没有。现在想来，这实现还是有很大问题啊，完全没有错误处理啊。面试的时候想的都是赶紧做完，太仓促了，很多都没考虑到，平时写代码肯定不会忘记错误处理。或许面试官也看出这些问题了，只是没指出来而已，默默在心里做了减分吧。
+        
+        <a class="button is-link" href="https://bughou.github.io/blog/interview/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">December 15, 2017</h2>
       <h1 class="title"><a href="https://bughou.github.io/blog/haproxy/">HAProxy相关</a></h1>
       <div class="content">
