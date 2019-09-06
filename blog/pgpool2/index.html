@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Bash的ctrl&#43;c挂断信号（SIGINT）的处理备忘 | bughou的笔记</title>
+<title>Pgpool-II的相关疑惑 | bughou的笔记</title>
 
 
 
@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://bughou.github.io/blog/bash-sigint/">
+<link rel="canonical" href="https://bughou.github.io/blog/pgpool2/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
@@ -44,14 +44,15 @@
     <div class="subtitle tags is-6 is-pulled-right">
       
     </div>
-    <h2 class="subtitle is-6">December 6, 2017</h2>
-    <h1 class="title">Bash的ctrl&#43;c挂断信号（SIGINT）的处理备忘</h1>
+    <h2 class="subtitle is-6">September 6, 2019</h2>
+    <h1 class="title">Pgpool-II的相关疑惑</h1>
     
     <div class="content">
-      <ol>
-<li><a href="https://www.cons.org/cracauer/sigint.html" target="_blank">https://www.cons.org/cracauer/sigint.html</a></li>
-<li><a href="https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc" target="_blank">https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc</a></li>
-</ol>
+      <p>Q: 为啥需要&rdquo;pool_passwd&rdquo;这么个东西？为啥不能拿着前端的密码直接去后端认证？<br />
+A: 1. 复用已缓存的连接时，不能拿着前端的密码去后端再认证一遍。（或许可以将已缓存的连接的密码也缓存着？）<br />
+　 2. 后端Postgresql每次去认证都会fork一个新进程，如果认证失败，开销太大？<br />
+　 3. Pgpool-II 4.0以后，支持前端trust，后端密码认证，这样就拿不到密码了。
+　 4. 如果开启了健康检查，需要用到密码。</p>
 
       
     </div>

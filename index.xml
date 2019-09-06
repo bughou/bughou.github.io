@@ -4,53 +4,62 @@
     <title>bughou的笔记</title>
     <link>https://bughou.github.io/</link>
     <description>Recent content on bughou的笔记</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo - gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/bughou&#34;&gt;bughou&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Wed, 20 Dec 2017 09:29:11 +0800</lastBuildDate>
+    <contact></contact>
+    <copyright>&copy; <a href="https://github.com/bughou">bughou</a> 2017</copyright>
     
-	<atom:link href="https://bughou.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bughou.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pgpool-II的相关疑惑</title>
+      <link>https://bughou.github.io/blog/pgpool2/</link>
+      <pubDate>Fri, 06 Sep 2019 18:19:16 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/pgpool2/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>腾讯面试</title>
       <link>https://bughou.github.io/blog/interview/</link>
       <pubDate>Wed, 20 Dec 2017 09:29:11 +0800</pubDate>
-      
+      <author></author>
       <guid>https://bughou.github.io/blog/interview/</guid>
-      <description>昨晚面试，暴露了我的一个问题，浮于表面，对基础概念的实现完全没有深入研究。 记录一下面试过程：
-1. 跳槽多 面试官坐下来，看我的简历，就说你呆过的公司挺多啊。让我解释一下为啥换了这多公司。于是我开始一家一家的解释离职原因。面试官也没说啥。现在想起来，我应该总结一下，到目前为止呆过5家公司，第一次辞职是上海回成都，第二次是因为自己创业，第三次是因为被朋友挖走了，第四次是因为公司高层斗争不发工资了。
-2. atoi实现 我说比较了解C，C相对C++简单很多。面试官说那你用C实现一下字符串转整数。正下笔的时候，发现C的函数定义是怎么样的都想不起来了，窘得不行。赶紧说好多年没写过C、语法都忘了，说用golang实现吧，面试官同意了。开始用golang实现：
-func atoi(s string) (result int) { d := 1 for i := 0; i &amp;lt; len(s); i++ { d *= 10 result += s[i] * d } return } 在写完也没检查立即就给面试官了，纸上字迹比较潦草，就给面试官解说我的思路。正准备说思路，发现不对啊，立即给面试官说，这里不对，应该是从右向左遍历，于是改成下面这样：
-func atoi(s string) (result int) { d := 1 for i := len(s) - 1; i &amp;gt;= 0; i++ { d *= 10 result += s[i] * d } return } 着急忙荒的i++也忘了改成i&amp;ndash;了。开始解释我的思路，面试官也没说啥，就说用Golang确实比用C简单很多，然后我说就这个功能来说用golang和用C，应该是一样的，没啥区别，他说C语言里你怎么遍历字符串，我一下想起来，这里取字符串长度用了len，而C没有这个内置方法，确实golang省事不少。后来回去的路上，突然想起来，不对啊， d *= 10 应该放在循环体的末尾啊，也不知道面试官看出来没有。现在想来，这实现还是有很大问题啊，完全没有错误处理啊。面试的时候想的都是赶紧做完，太仓促了，很多都没考虑到，平时写代码肯定不会忘记错误处理。或许面试官也看出这些问题了，只是没指出来而已，默默在心里做了减分吧。</description>
+      <description></description>
+      
     </item>
     
     <item>
       <title>HAProxy相关</title>
       <link>https://bughou.github.io/blog/haproxy/</link>
       <pubDate>Fri, 15 Dec 2017 21:58:42 +0800</pubDate>
-      
+      <author></author>
       <guid>https://bughou.github.io/blog/haproxy/</guid>
-      <description>Seamless Reloads的前世今生  https://www.haproxy.com/blog/truly-seamless-reloads-with-haproxy-no-more-hacks/</description>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Nginx相关</title>
       <link>https://bughou.github.io/blog/nginx/</link>
       <pubDate>Fri, 15 Dec 2017 21:38:42 +0800</pubDate>
-      
+      <author></author>
       <guid>https://bughou.github.io/blog/nginx/</guid>
-      <description>为什么nginx Worker负载不均  https://blog.cloudflare.com/the-sad-state-of-linux-socket-balancing/
- Worker默认不共享数据  https://www.nginx.com/resources/admin-guide/load-balancer/#zone</description>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Bash的ctrl&#43;c挂断信号（SIGINT）的处理备忘</title>
       <link>https://bughou.github.io/blog/bash-sigint/</link>
       <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
-      
+      <author></author>
       <guid>https://bughou.github.io/blog/bash-sigint/</guid>
-      <description> https://www.cons.org/cracauer/sigint.html https://unix.stackexchange.com/questions/230421/unable-to-stop-a-bash-script-with-ctrlc  </description>
+      <description></description>
+      
     </item>
     
   </channel>

@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/bughou&#34;&gt;bughou&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Wed, 20 Dec 2017 09:29:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 18:19:16 +0800</lastBuildDate>
     
 	<atom:link href="https://bughou.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pgpool-II的相关疑惑</title>
+      <link>https://bughou.github.io/blog/pgpool2/</link>
+      <pubDate>Fri, 06 Sep 2019 18:19:16 +0800</pubDate>
+      
+      <guid>https://bughou.github.io/blog/pgpool2/</guid>
+      <description>Q: 为啥需要&amp;rdquo;pool_passwd&amp;rdquo;这么个东西？为啥不能拿着前端的密码直接去后端认证？
+A: 1. 复用已缓存的连接时，不能拿着前端的密码去后端再认证一遍。（或许可以将已缓存的连接的密码也缓存着？）
+2. 后端Postgresql每次去认证都会fork一个新进程，如果认证失败，开销太大？
+3. Pgpool-II 4.0以后，支持前端trust，后端密码认证，这样就拿不到密码了。 4. 如果开启了健康检查，需要用到密码。</description>
+    </item>
     
     <item>
       <title>腾讯面试</title>
