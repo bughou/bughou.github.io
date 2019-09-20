@@ -2,8 +2,7 @@
 title: "Docker镜像名称"
 date: 2019-09-20T16:35:41+08:00
 ---
-
-  docker的镜像名称可能包含一个可选的registry域名。如果没有，则使用docker.io。
+docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。
 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 
 根据[docker的开源registry的文档](https://docs.docker.com/registry/spec/api/)的说明：
 
