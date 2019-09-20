@@ -14,11 +14,11 @@
     
     <item>
       <title>Docker镜像名称</title>
-      <link>https://bughou.github.io/blog/docker/</link>
+      <link>https://bughou.github.io/blog/docker-image-name/</link>
       <pubDate>Fri, 20 Sep 2019 16:35:41 +0800</pubDate>
       
-      <guid>https://bughou.github.io/blog/docker/</guid>
-      <description>docker的镜像名称可能包含一个可选的registry域名。如果没有，则使用docker.io。 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 根据docker的开源registry的文档的说明：
+      <guid>https://bughou.github.io/blog/docker-image-name/</guid>
+      <description>docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 根据docker的开源registry的文档的说明：
  Classically, repository names have always been two path components where each path component is less than 30 characters. The V2 registry API does not enforce this. The rules for a repository name are as follows:
  A repository name is broken up into path components. A component of a repository name must be at least one lowercase, alpha-numeric characters, optionally separated by periods, dashes or underscores. More strictly, it must match the regular expression [a-z0-9]+(?</description>
     </item>

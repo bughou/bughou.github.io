@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://bughou.github.io/blog/docker/">
+<link rel="canonical" href="https://bughou.github.io/blog/docker-image-name/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
@@ -48,7 +48,7 @@
     <h1 class="title">Docker镜像名称</h1>
     
     <div class="content">
-      <p>docker的镜像名称可能包含一个可选的registry域名。如果没有，则使用docker.io。
+      <p>docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。
 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？
 根据<a href="https://docs.docker.com/registry/spec/api/" target="_blank">docker的开源registry的文档</a>的说明：</p>
 

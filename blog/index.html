@@ -43,19 +43,18 @@
   <div class="container">
     
     
-    
     <article>
       <div class="subtitle tags is-6 is-pulled-right">
         
       </div>
       <h2 class="subtitle is-6 date">September 20, 2019</h2>
-      <h1 class="title"><a href="https://bughou.github.io/blog/docker/">Docker镜像名称</a></h1>
+      <h1 class="title"><a href="https://bughou.github.io/blog/docker-image-name/">Docker镜像名称</a></h1>
       <div class="content">
-        docker的镜像名称可能包含一个可选的registry域名。如果没有，则使用docker.io。 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 根据docker的开源registry的文档的说明：
+        docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 根据docker的开源registry的文档的说明：
  Classically, repository names have always been two path components where each path component is less than 30 characters. The V2 registry API does not enforce this. The rules for a repository name are as follows:
  A repository name is broken up into path components. A component of a repository name must be at least one lowercase, alpha-numeric characters, optionally separated by periods, dashes or underscores. More strictly, it must match the regular expression [a-z0-9]+(?
         
-        <a class="button is-link" href="https://bughou.github.io/blog/docker/" style="height:28px">
+        <a class="button is-link" href="https://bughou.github.io/blog/docker-image-name/" style="height:28px">
           Read more
         </a>
         
@@ -167,5 +166,4 @@ func atoi(s string) (result int) { d := 1 for i := len(s) - 1; i &gt;= 0; i++ { 
 
 </body>
 </html>
-
 
