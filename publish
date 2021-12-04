@@ -1,11 +1,11 @@
 #!/bin/bash
 
 set -e
-rm -rf public/*
+rm -rf docs/*
 
 hugo
 
-git add public
+git add docs
 git commit -am save
 git push
 

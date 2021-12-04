@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Blogs | bughou的笔记</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://bughou.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://bughou.github.io/blog/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://bughou.github.io">
+          <h1 class="title is-4">bughou的笔记</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">December 4, 2021</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/graphic-chars/">图形文字</a></h1>
+      <div class="content">
+         check: ✅ cross: ❌  网站：
+ UTF8图标(utf8icons.com) 符号大全(fhdq.net) 表格符号(wikipedia.org)  表格
+┌───────────┐ ┏ ━ ━ ━ ━ ━ ┓ │ gray │ ┃ black ┃ ├───┬───┬───┤ ┣ ━ ┳ ━ ┳ ━ ┫ │ │ │ │ ┃ ┃ ┃ ┃ ├───┼───┬───┤ ┣ ━ ╋ ━ ╋ ━ ┫ │ │ │ │ ┃ ┃ ┃ ┃ └───┴───┴───┘ ┗ ━ ┻ ━ ┻ ━ ┛  流程图
+(待提交) ⇩ 提交 (待审核) 拒绝⇨ (退回) ⇩ 通过 (完成) A ━ ━ B ━➢ C ┃ ┣ ━ ━ D ━➣ E ┃ ┗ ━ ━ F ━➤ G ➢ ➣ ➤ ⬅ ⬆ ⬇ ⇦ ⇧ ⇨ ⇩  
+        
+      </div>
+    </article>
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">December 4, 2021</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/knowledge/">知识图谱</a></h1>
+      <div class="content">
+        知识图谱  body { padding: 2em auto; } h3 { text-align: center; } table { margin: 1em auto; border-spacing: 0; border-collapse: collapse; } th, td { padding: 10px; border: 2px solid gray; }    知识图谱   开发 语言 包管理 代码格式化 静态检查 转译 构建   JavasSript  npm
+Yarn   Prettier   ESLint
+TypeScript   Babel   webpack
+esbuild    Golang  go mod   gofmt   golint
+        
+        <a class="button is-link" href="https://bughou.github.io/blog/knowledge/" style="height:28px">
+          Read more
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">September 20, 2019</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/docker-image-name/">Docker镜像名称</a></h1>
+      <div class="content">
+        docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。 因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？ 根据docker的开源registry的文档的说明：
+ Classically, repository names have always been two path components where each path component is less than 30 characters. The V2 registry API does not enforce this. The rules for a repository name are as follows:
+ A repository name is broken up into path components. A component of a repository name must be at least one lowercase, alpha-numeric characters, optionally separated by periods, dashes or underscores. More strictly, it must match the regular expression [a-z0-9]+(?
+        
+        <a class="button is-link" href="https://bughou.github.io/blog/docker-image-name/" style="height:28px">
+          Read more
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">September 6, 2019</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/pgpool2/">Pgpool-II的相关疑惑</a></h1>
+      <div class="content">
+        Q: 为啥需要&rdquo;pool_passwd&rdquo;这么个东西？为啥不能拿着前端的密码直接去后端认证？
+A: 1. 前后端的密码认证是加了随机盐的，参考AuthenticationMD5Password。要连接多个后端时，盐不一样，不能直接将前端输入传给后端。
+2. 复用已缓存的连接时，不能拿着前端的密码去后端再认证一遍。（或许可以将已缓存的连接的密码也缓存着？）
+3. 后端Postgresql每次去认证都会fork一个新进程，如果认证失败，开销太大？
+4. Pgpool-II 4.0以后，支持前端trust，后端密码认证，这样就拿不到密码了。
+5. 如果开启了健康检查，需要用到密码。
+        
+      </div>
+    </article>
+    
+    <article>
+      <div class="subtitle tags is-6 is-pulled-right">
+        
+      </div>
+      <h2 class="subtitle is-6 date">December 20, 2017</h2>
+      <h1 class="title"><a href="https://bughou.github.io/blog/interview/">腾讯面试</a></h1>
+      <div class="content">
+        昨晚面试，暴露了我的一个问题，浮于表面，对基础概念的实现完全没有深入研究。 记录一下面试过程：
+1. 跳槽多 面试官坐下来，看我的简历，就说你呆过的公司挺多啊。让我解释一下为啥换了这多公司。于是我开始一家一家的解释离职原因。面试官也没说啥。现在想起来，我应该总结一下，到目前为止呆过5家公司，第一次辞职是上海回成都，第二次是因为自己创业，第三次是因为被朋友挖走了，第四次是因为公司高层斗争不发工资了。
+2. atoi实现 我说比较了解C，C相对C++简单很多。面试官说那你用C实现一下字符串转整数。正下笔的时候，发现C的函数定义是怎么样的都想不起来了，窘得不行。赶紧说好多年没写过C、语法都忘了，说用golang实现吧，面试官同意了。开始用golang实现：
+func atoi(s string) (result int) { d := 1 for i := 0; i &lt; len(s); i++ { d *= 10 result += s[i] * d } return } 在写完也没检查立即就给面试官了，纸上字迹比较潦草，就给面试官解说我的思路。正准备说思路，发现不对啊，立即给面试官说，这里不对，应该是从右向左遍历，于是改成下面这样：
+func atoi(s string) (result int) { d := 1 for i := len(s) - 1; i &gt;= 0; i++ { d *= 10 result += s[i] * d } return } 着急忙荒的i++也忘了改成i&ndash;了。开始解释我的思路，面试官也没说啥，就说用Golang确实比用C简单很多，然后我说就这个功能来说用golang和用C，应该是一样的，没啥区别，他说C语言里你怎么遍历字符串，我一下想起来，这里取字符串长度用了len，而C没有这个内置方法，确实golang省事不少。后来回去的路上，突然想起来，不对啊， d *= 10 应该放在循环体的末尾啊，也不知道面试官看出来没有。现在想来，这实现还是有很大问题啊，完全没有错误处理啊。面试的时候想的都是赶紧做完，太仓促了，很多都没考虑到，平时写代码肯定不会忘记错误处理。或许面试官也看出这些问题了，只是没指出来而已，默默在心里做了减分吧。
+        
+        <a class="button is-link" href="https://bughou.github.io/blog/interview/" style="height:28px">
+          Read more
+        </a>
+        
+      </div>
+    </article>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+          <a class="button" href="/blog/page/2/">
+            Older
+            <span class="icon is-small is-marginless">
+              <svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <polyline points="14 6 20 12 14 18"/>
+    
+  </svg>
+            </span>
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/bughou">bughou</a> 2017</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+</body>
+</html>
+

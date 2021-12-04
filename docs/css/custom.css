@@ -1,0 +1,15 @@
+body, button, input, select, textarea {
+  font-family: initial;
+}
+
+.content pre code {
+  font-size: 150%;
+}
+
+/* for Chroma */
+.highlight {
+  background-color: inherit;
+}
+.highlight div {
+  background-color: inherit !important;
+}
