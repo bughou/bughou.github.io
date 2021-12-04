@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+rm -rf public/*
+
+hugo
+
+git commit -am save
+git push
+
