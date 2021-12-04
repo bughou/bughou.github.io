@@ -5,6 +5,7 @@ rm -rf public/*
 
 hugo
 
+git add public
 git commit -am save
 git push
 

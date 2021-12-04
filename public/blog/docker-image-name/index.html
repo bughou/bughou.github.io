@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Docker镜像名称 | bughou的笔记</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://bughou.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://bughou.github.io/blog/docker-image-name/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://bughou.github.io">
+          <h1 class="title is-4">bughou的笔记</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">September 20, 2019</h2>
+    <h1 class="title">Docker镜像名称</h1>
+    
+    <div class="content">
+      <p>docker的镜像名称可以包含一个可选的registry域名。如果没有，则使用docker.io。
+因为镜像名称并没有包含https://之类的协议前缀，那docker是怎么区分这个镜像名称是否包含了registry域名的呢？
+根据<a href="https://docs.docker.com/registry/spec/api/" target="_blank">docker的开源registry的文档</a>的说明：</p>
+
+<blockquote>
+<p>Classically, repository names have always been two path components where each path component is less than 30 characters. The V2 registry API does not enforce this. The rules for a repository name are as follows:</p>
+
+<ol>
+<li>A repository name is broken up into path components. A component of a repository name must be at least one lowercase, alpha-numeric characters, optionally separated by periods, dashes or underscores. More strictly, it must match the regular expression <code>[a-z0-9]+(?:[._-][a-z0-9]+)*</code>.</li>
+<li>If a repository name has two or more path components, they must be separated by a forward slash (“/”).</li>
+<li>The total length of a repository name, including slashes, must be less than 256 characters.</li>
+</ol>
+</blockquote>
+
+<p>根据第一点的正则，一个域名也是一个合法的仓库名称。这就让人疑惑了，example.com/abc到底是example.com服务器上一个名为abc的镜像呢，还是docker.io上的镜像呢？
+去<a href="https://hub.docker.com/signup地址终于找到了答案，在Docker" target="_blank">https://hub.docker.com/signup地址终于找到了答案，在Docker</a> ID入非字母数字的字符时，提示“Please use only alphanumeric characters.”。原来虽然docker的开源registry，允许<code>._-</code>字符作为仓库名称，但是hub.docker.com是不允许任何符号作为Docker ID的。所以根据自己的猜测和通过<code>docker push</code>实验，总结如下：</p>
+
+<ol>
+<li>如果镜像名没有包含&rdquo;/&ldquo;，则自动加上&rdquo;docker.io/library/&ldquo;前缀，并使用docker.io作为registry。</li>
+<li>如果镜像名包含&rdquo;/&ldquo;，并且第一个&rdquo;/&ldquo;前的部分不包含&rdquo;.&ldquo;，则自动加上&rdquo;docker.io/&ldquo;前缀，并使用docker.io作为registry。</li>
+<li>如果镜像名包含&rdquo;/&ldquo;，并且第一个&rdquo;/&ldquo;前的部分包含&rdquo;.&ldquo;，则使用改部分作为registry。</li>
+</ol>
+
+<p>docker这样的设计，让官方的镜像名称更简洁了。只是也让我费了好多脑筋。</p>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/bughou">bughou</a> 2017</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bughou的笔记</title>
+    <link>https://bughou.github.io/</link>
+    <description>Recent content on bughou的笔记</description>
+    <generator>Hugo - gohugo.io</generator>
+    <language>en</language>
+    <contact></contact>
+    <copyright>&copy; <a href="https://github.com/bughou">bughou</a> 2017</copyright>
+    
+        <atom:link href="https://bughou.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>图形文字</title>
+      <link>https://bughou.github.io/blog/graphic-chars/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/graphic-chars/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>知识图谱</title>
+      <link>https://bughou.github.io/blog/knowledge/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/knowledge/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker镜像名称</title>
+      <link>https://bughou.github.io/blog/docker-image-name/</link>
+      <pubDate>Fri, 20 Sep 2019 16:35:41 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/docker-image-name/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Pgpool-II的相关疑惑</title>
+      <link>https://bughou.github.io/blog/pgpool2/</link>
+      <pubDate>Fri, 06 Sep 2019 18:19:16 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/pgpool2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>腾讯面试</title>
+      <link>https://bughou.github.io/blog/interview/</link>
+      <pubDate>Wed, 20 Dec 2017 09:29:11 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/interview/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HAProxy相关</title>
+      <link>https://bughou.github.io/blog/haproxy/</link>
+      <pubDate>Fri, 15 Dec 2017 21:58:42 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/haproxy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nginx相关</title>
+      <link>https://bughou.github.io/blog/nginx/</link>
+      <pubDate>Fri, 15 Dec 2017 21:38:42 +0800</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/nginx/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bash的ctrl&#43;c挂断信号（SIGINT）的处理备忘</title>
+      <link>https://bughou.github.io/blog/bash-sigint/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>https://bughou.github.io/blog/bash-sigint/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
